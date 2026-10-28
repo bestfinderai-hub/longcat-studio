@@ -44,7 +44,7 @@ Gradio UI → Preview + nedladdning
 ```
 
 **Pipeline:**
-- **TTS:** Microsoft Edge TTS (`sv-SE-SofieNeural` / `sv-SE-MattiasNeural`) — gratis, ingen API-nyckel
+- **TTS:** Microsoft Edge TTS (`sv-SE-SofieNeural` / `sv-SE-MattiasNeural` / `sv-FI-NooraNeural`) — gratis, ingen API-nyckel
 - **Video:** LongCat Avatar 1.5 med INT8-kvantisering + steg-distillation (8 steg = snabbt)
 - **Cache:** Modeller (~25 GB) sparas i din Google Drive — laddas bara ner en gång
 
