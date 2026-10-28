@@ -59,6 +59,14 @@ Gradio UI → Preview + nedladdning
 
 ---
 
+## GDPR / Dataskydd
+
+- Bilder och ljud bearbetas i din Colab-VM — rensas vid sessionsslut
+- Modeller lagras i ditt Google Drive (ditt eget konto)
+- **OBS:** TTS-text skickas till **Microsoft Edge TTS API** (speech.platform.bing.com). Inkludera inte känsliga personuppgifter i TTS-texten.
+
+---
+
 ## Licens
 
 Notebook: MIT  
