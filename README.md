@@ -8,7 +8,7 @@ Bygger på [LongCat-Video-Avatar 1.5](https://github.com/meituan-longcat/LongCat
 
 ## Snabbstart
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bestfinderai/longcat-studio/blob/main/LongCat_Studio_SE.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bestfinderai-hub/longcat-studio/blob/main/LongCat_Studio_SE.ipynb)
 
 1. Klicka "Open In Colab"
 2. **Aktivera A100:** Runtime → Change runtime type → A100 *(kräver Colab Pro)*
