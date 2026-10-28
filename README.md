@@ -1,74 +1,63 @@
-# LongCat Studio SE — Talking Avatar
+# Talking Avatar Studio SE
 
 Ladda upp ett foto + skriv text på svenska → få en talande video.
 
-Bygger på [LongCat-Video-Avatar 1.5](https://github.com/meituan-longcat/LongCat-Video) av Meituan (MIT-licens).
-
 ---
 
-## Snabbstart
+## 🎬 SadTalker Studio SE ⭐ REKOMMENDERAS
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bestfinderai-hub/longcat-studio/blob/main/LongCat_Studio_SE.ipynb)
+Funkar på **gratis Colab T4** (15 GB) — ingen betalplan behövs.
 
-1. Klicka "Open In Colab"
-2. **Aktivera A100:** Runtime → Change runtime type → A100 *(kräver Colab Pro)*
-3. Kör cellerna **1–7** uppifrån och ner (tar ~15 min första gången)
-4. Kör cell **8** → klicka på den publika Gradio-länken → börja generera
-
----
-
-## Krav
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bestfinderai-hub/longcat-studio/blob/main/SadTalker_Studio_SE.ipynb)
 
 | GPU | VRAM | Status |
 |-----|------|--------|
-| **A100 (40 GB)** | 40 GB | ✅ Rekommenderas |
-| **V100 (32 GB)** | 32 GB | ✅ Fungerar |
-| T4 (15 GB) | 15 GB | ❌ För liten |
+| **T4 (15 GB)** | 15 GB | ✅ Gratis Colab |
+| **V100 (16 GB)** | 16 GB | ✅ Fungerar |
+| **A100 (40 GB)** | 40 GB | ✅ Fungerar |
 
-Colab Pro kostar ~10 USD/mån och ger tillgång till A100.
-
----
-
-## Vad som händer
-
-```
-Ditt foto + din svenska text
-        ↓
-Edge-TTS (Microsoft, gratis)
-    → Swedish WAV-fil
-        ↓
-LongCat-Video-Avatar-1.5 (Meituan, MIT)
-    → Talking head video (MP4)
-        ↓
-Gradio UI → Preview + nedladdning
-```
+**Snabbstart:**
+1. Klicka "Open In Colab"
+2. Aktivera GPU: Runtime → Change runtime type → **T4 GPU** *(gratis)*
+3. Kör cellerna **1–6** (tar ~10 min första gången)
+4. Kör cell **7** → kopiera `gradio.live`-länken → klistra in i dashboarden
 
 **Pipeline:**
-- **TTS:** Microsoft Edge TTS (`sv-SE-SofieNeural` / `sv-SE-MattiasNeural` / `sv-FI-NooraNeural`) — gratis, ingen API-nyckel
-- **Video:** LongCat Avatar 1.5 med INT8-kvantisering + steg-distillation (8 steg = snabbt)
-- **Cache:** Modeller (~25 GB) sparas i din Google Drive — laddas bara ner en gång
+```
+Foto + text
+    ↓
+Edge TTS (Microsoft, gratis) → WAV 16kHz
+    ↓
+SadTalker (MIT-licens) → Talande video MP4
+    ↓
+Gradio UI → Förhandsvisning + nedladdning
+```
+
+**TTS-röster:** Sofie (rikssvenska) · Mattias (rikssvenska) · Noora (finlandssvenska)  
+**Tid per video:** ~1–2 min (256 px) eller ~3–4 min (512 px)  
+**Modeller:** ~1.3 GB, cachas i Google Drive (laddas ner en gång)
 
 ---
 
-## Tekniska detaljer
+## 🗄️ LongCat Studio SE (arkiverad)
 
-- Model: `LongCat-Video-Avatar-1.5` (Whisper-large-v3 audio encoder)
-- Inference: `--use_int8 --use_distill` (8 steg, ~5-10 min per video på A100)
-- Upplösning: 480p (standard) eller 720p
-- Format: MP4, 25fps
+Kräver **A100 (40 GB)** — Colab Pro ~10 USD/mån.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bestfinderai-hub/longcat-studio/blob/main/LongCat_Studio_SE.ipynb)
+
+Baserat på LongCat-Video-Avatar 1.5 (Meituan, MIT). Ger något högre kvalitet men kräver mycket mer VRAM.
 
 ---
 
 ## GDPR / Dataskydd
 
-- Bilder och ljud bearbetas i din Colab-VM — rensas vid sessionsslut
+- Bilder och ljud bearbetas i din Colab-VM och rensas vid sessionsslut
 - Modeller lagras i ditt Google Drive (ditt eget konto)
-- **OBS:** TTS-text skickas till **Microsoft Edge TTS API** (speech.platform.bing.com). Inkludera inte känsliga personuppgifter i TTS-texten.
-
----
+- **OBS:** TTS-text skickas till Microsoft Edge TTS API — inkludera inte känsliga personuppgifter
 
 ## Licens
 
-Notebook: MIT  
-Modell-vikter: MIT (Meituan)  
+Notebooks: MIT  
+SadTalker: MIT (OpenTalker)  
+LongCat-modell: MIT (Meituan)  
 Edge-TTS: Microsoft (gratis för personligt bruk)
